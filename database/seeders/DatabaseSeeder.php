@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $platforms = ['Laracasts', 'Youtube', 'Larajobs', 'Laravel NEws', 'Laracasts Forum'];
+        $platforms = ['Laracasts', 'Youtube', 'Larajobs', 'Laravel News', 'Laracasts Forum'];
         foreach($platforms as $item) {
             Platform::create([
                 'name' => $item,
