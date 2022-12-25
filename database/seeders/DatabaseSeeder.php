@@ -4,6 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Series;
+use App\Models\Topic;
+use App\Models\Platform;
+use App\Models\User;
+use App\Models\Course;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +25,32 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $series = ['PHP', 'JavaScript', 'WordPress', 'Laravel'];
+        foreach($series as $item) {
+            Series::create([
+                'name' => $item,
+            ]);
+        }
+
+        $topics = ['Eloquent', 'Validation', 'Authentication', 'Testing', 'Refactoring'];
+        foreach($topics as $item) {
+            Topic::create([
+                'name' => $item,
+            ]);
+        }
+
+        $platforms = ['Laracasts', 'Youtube', 'Larajobs', 'Laravel NEws', 'Laracasts Forum'];
+        foreach($platforms as $item) {
+            Platform::create([
+                'name' => $item,
+            ]);
+        }
+
+        // create 50 users
+        User::factory(50)->create();
+
+        // create 100 courses
+        Course::factory(100)->create();
     }
 }
